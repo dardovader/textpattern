@@ -1,0 +1,31 @@
+<txp:if_individual_article>
+  <div class="postmetadata">
+  Entrada publicada el <strong><txp:posted /></strong><br />
+  Archivada en <txp:category1 link="y" title="1" /><br />
+  <txp:tru_tags_if_has_tags>
+    Palabras clave: <txp:tru_tags_from_article /><br />
+  </txp:tru_tags_if_has_tags>
+  <txp:if_comments_allowed><p><a href="#postcomment">Ir a los comentarios.</a></p><txp:else /><p>No se permiten comentarios.</p></txp:if_comments_allowed>
+</div>
+<div class="backpost">
+  <h2><a class="posttitle" href="<txp:permlink />" style="text-decoration:none;" rel="bookmark" title="Enlace:<txp:title />"><txp:title /></a></h2>
+  <div class="commentPos"><txp:comments_invite /></div>
+  <txp:body />
+</div>
+
+<txp:else />
+
+<div class="post">
+  <txp:if_section name="info,contacto">
+    <h2><span class="posttitle"><txp:title /></span></h2>
+    <txp:else />
+      <h2><a class="posttitle" href="<txp:permlink />" style="text-decoration:none;" rel="bookmark" title="Enlace:<txp:title />"><txp:title /></a></h2>
+    <div class="cite"><p><txp:posted /></p>
+      <p>Archivado en: <txp:category1 link="1" /> <txp:category2 link="1" />
+	  </p>
+	</div>
+  </txp:if_section>
+  <div class="commentPos"><txp:comments_invite /></div>
+   <txp:body />
+</div>
+</txp:if_individual_article>

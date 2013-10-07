@@ -1,0 +1,9 @@
+<div id="navigation">
+  <ul class="navmenu">
+    <li><a href="<txp:site_url />" title="Blog"<txp:if_section name="articulos,default"> class="here"</txp:if_section>>Blog</a></li>
+	<li><a href="<txp:site_url />archivos-por-categoria" title="Archivos"<txp:if_section name="archivos-por-categoria"> class="here"</txp:if_section>>Archivo</a></li>
+    <li><a href="<txp:site_url />info" title="Acerca de"<txp:if_section name="info"> class="here"</txp:if_section>>Acerca de</a></li>
+    <li><a href="<txp:site_url />contacto" title="Contacta conmigo"<txp:if_section name="contacto"> class="here"</txp:if_section>>Contactar</a></li>
+    <li><txp:feed_link flavor="rss" section="articulos"><txp:image id="5"/></txp:feed_link></li>
+  </ul>
+</div>

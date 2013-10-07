@@ -1,0 +1,92 @@
+<div id="sidebar">
+
+<div class="sidebox">
+
+<div class="title">Ahora estás...</div>
+
+<txp:if_category>
+<p>navegando por el archivo de la categoría "<txp:category title="1" />".</p>
+
+<txp:else />
+
+<txp:if_section name="archivo-mensual">
+<p>navegando por el archivo mensual de <txp:site_name />.</p>
+</txp:if_section>
+
+<txp:if_section name="archivos-por-categoria">
+<p>navegando por el <strong>archivo de categorías</strong> de <txp:site_name />.</p>
+</txp:if_section>
+
+<txp:if_section name="contacto">
+<p>consultando la <strong>página de contacto</strong>.</p>
+</txp:if_section>
+
+<txp:if_section name="info">
+<p>revisando la página  <strong>"acerca de"</strong> <txp:site_name />.</p>
+</txp:if_section>
+
+<txp:if_section name="articulos">
+<p>leyendo una entrada.</p>
+</txp:if_section>
+
+<txp:if_section name="">
+<p>en la <strong>portada</strong> de <txp:site_name />.</p>
+</txp:if_section>
+
+<txp:if_section name="buscar">
+<p>mirando los resultados de búsqueda de <strong>"<txp:search_term />"</strong>.</p>
+</txp:if_section>
+
+</txp:if_category>
+
+</div>
+
+<div class="sidebox1">
+
+<div class="title">Secciones</div>
+
+<ul class="section_list">
+
+<li><a href="<txp:site_url />info/">Acerca de</a></li>
+<li><a href="<txp:site_url />contacto/">Contacto</a></li>
+<li><a href="<txp:site_url />archivos-por-categoria/">Archivo</a></li>
+
+</ul>
+
+</div>
+
+<div class="sidebox2">
+
+<txp:recent_articles limit="4" section="articulos" label="Artítuclos recientes" labeltag="h3" break="li" wraptag="ul"/>
+
+<txp:category_list break="li" wraptag="ul" />
+
+</div>
+
+
+<div class="sidebox3">
+
+<div class="title">Categorías</div>
+
+<txp:category_list break="li" wraptag="ul" />
+
+</div>
+
+<div class="sidebox4">
+
+<div class="title">Buscar</div>
+
+<form action="<txp:site_url />buscar/" method="get">
+<p><input type="text" name="q" value="" size="15" /><br /><input type="submit" value="¡encontrar!" /></p></form>
+
+</div>
+
+<div class="sidebox5">
+
+<div class="title">Enlaces</div>
+
+<txp:linklist category="textpattern" form="plainlinks" sort="linksort" wraptag="ul" break="li" />
+
+</div>
+
+</div>

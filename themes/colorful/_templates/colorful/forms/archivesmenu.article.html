@@ -1,0 +1,19 @@
+<txp:if_section name="archivos-por-categoria">
+
+<txp:if_different>
+
+<li><a href="#<txp:category1 />"><txp:category1 title="1" /></a></li>
+
+</txp:if_different>
+
+</txp:if_section>
+
+<txp:if_section name="archivo-mensual">
+
+<txp:if_different>
+
+<li><a href="#Y<txp:posted format="%Y" />"><txp:posted format="%Y" /></a></li>
+
+</txp:if_different>
+
+</txp:if_section>

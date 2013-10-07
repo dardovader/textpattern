@@ -1,0 +1,122 @@
+<txp:output_form form="DTD_head" />
+
+</head>
+
+<body>
+
+<div id="accessibility">
+<a href="#content" title="Ir al contenido">Ir a contenido</a> 
+<a href="#sidebar-1" title="Ir a navegación">Ir a navegación</a> 
+<a href="#sidebar-2" title="Ir a la búsqueda">Ir a la búsqueda</a> 
+</div> <!-- /accessibility -->
+
+<div id="wrapper">
+
+<div id="masthead"><txp:output_form form="navigation" /></div>
+    <txp:output_form form="header" />
+
+<div id="insideWrapper">
+
+<txp:output_form form="sidebar" />
+
+<div id="contentwrapper">
+
+<div id="content">
+
+<txp:if_section name="articulos">
+
+<txp:article />
+
+<txp:if_individual_article>
+
+<div id="paging"><txp:link_to_prev><span class="left">« <txp:prev_title /></span></txp:link_to_prev><txp:link_to_next><span class="right"><txp:next_title /> »</span></txp:link_to_next></div>
+
+<hr class="clear" />
+
+<txp:else />
+
+<div id="paging"><txp:older><span class="left">« entradas anteriores</span></txp:older><txp:newer><span class="right">entradas postariores »</span></txp:newer></div>
+
+<hr class="clear" />
+
+</txp:if_individual_article>
+
+</txp:if_section>
+
+<txp:if_section name="archivos-por-categoria">
+
+<div id="archivescat">
+
+<h2><span class="posttitle">Archivos por categoría</span></h2>
+
+<p class="categoryinstruct">Pulsa en un nombre de categoría del menú para ir al listado.</p>
+<p class="categoryinstruct">Pulsa sobre el nombre de una categoría en el listado para ver la lista completa de anotaciones en esa categoría.</p>
+<p class="categoryinstruct">Si lo prefieres puedes ver los archivos <a href="<txp:site_url />archivo-mensual">mensuales</a></p>
+
+<div id="category">
+
+<a name="menutop" id="menutop"></a><p class="menutitle">Saltar a la categoría</p>
+
+<ul class="categorymenu">
+
+<txp:article_custom form="archivesmenu" limit="9999" section="articulos" sortby="category1" sortdir="asc" />
+
+</ul>
+
+<div id="categorylisting">
+
+<txp:article_custom form="archivescat" limit="9999" section="articulos" sortby="category1,Posted" sortdir="desc" />
+
+</div> <!-- close categorylisting -->
+
+</div> <!-- close category -->
+
+</div>
+
+</txp:if_section>
+
+<txp:if_section name="archivo-mensual">
+
+<div id="archivesmonth">
+
+<h2><span class="posttitle">Archivos menusales</span></h2>
+
+<p class="categoryinstruct">Si lo prefieres puedes ver los archivos por categoría <a href="<txp:site_url />archivos-por-categoria">Categoría</a></p>
+
+<div id="category">
+
+<a name="menutop" id="menutop"></a><p class="menutitle">Saltar al año</p>
+
+<ul class="categorymenu">
+
+<txp:article_custom form="archivesmenu" limit="9999" section="articulos" />
+
+</ul>
+
+<div id="categorylisting">
+
+<txp:article_custom section="articulos" limit=99999 form="archivesmonth" />
+
+<hr class="clearer" />
+
+</div> <!-- close categorylisting -->
+
+</div> <!-- close category -->
+
+</div>
+
+</txp:if_section>
+
+</div> <!-- close content -->
+
+<!-- footer -->
+<txp:output_form form="footer" />
+
+</div> <!-- close contentwrapper -->
+
+</div> <!-- close insideWrapper -->
+
+</div> <!-- close wrapper -->
+
+</body>
+</html>

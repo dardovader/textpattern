@@ -1,0 +1,54 @@
+<txp:output_form form="DTD_head" />
+
+</head>
+
+<body>
+  <div id="accessibility">
+    <a href="#content" title="Ir al contenido">Ir a contenido</a> 
+    <a href="#sidebar-1" title="Ir a navegación">Ir a navegación</a> 
+    <a href="#sidebar-2" title="Ir a la búsqueda">Ir a la búsqueda</a> 
+  </div> <!-- /accessibility -->
+  <div id="wrapper">
+    <div id="masthead"><txp:output_form form="navigation" /></div>
+    <txp:output_form form="header" />
+    </div>
+      <div id="insideWrapper">
+        <txp:output_form form="sidebar" />
+        <div id="contentwrapper">
+          <div id="content">
+            <txp:if_category>
+			  <h2 id="category">Categoría "<txp:category title="1" />"</h2>
+			</txp:if_category>
+			<txp:if_section name=",info,contacto">
+			  <txp:article limit="3" />
+			</txp:if_section>
+            <txp:if_section name="contacto">
+			  <txp:output_form form="email" />
+			</txp:if_section>
+			<txp:if_section name="buscar">
+			  <div class="post">
+			    <h2>Resultados de búsqueda</h2>
+				<txp:article limit="20" pgonly="1" />
+				<h2 class="searchtitle"><txp:search_result_count /> para el término "<txp:search_term />"</h2>
+				<txp:article limit="30" />
+			  </div>
+			</txp:if_section>
+			<txp:if_section name="palabraclave">
+				<txp:tru_tags_handler allowoverride="0" form="default" limit="6" listform="default" pgonly="0" searchall="0" searchsticky="0" sort="Posted desc" status="4"/>
+			</txp:if_section>
+			<txp:if_individual_article>
+			<div id="paging">
+			  <txp:link_to_prev><span class="left">« <txp:prev_title /></span></txp:link_to_prev><txp:link_to_next><span class="right"><txp:next_title /> »</span></txp:link_to_next></div>
+			  <hr class="clear" />
+			<txp:else />
+			  <div id="paging"><txp:older><span class="left">« anotaciones anteriores </span></txp:older><txp:newer><span class="right">Anotaciones posteriores »</span></txp:newer></div>
+			  <hr class="clear" />
+			</txp:if_individual_article>
+		  </div> <!-- close content -->
+		  <!-- footer -->
+		<txp:output_form form="footer" />
+      </div> <!-- close contentwrapper -->
+	</div> <!-- close insideWrapper -->
+  </div> <!-- close wrapper -->
+</body>
+</html>

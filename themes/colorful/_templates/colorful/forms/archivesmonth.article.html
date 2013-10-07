@@ -1,0 +1,19 @@
+<!-- show the year -->
+<txp:if_different>
+
+<a name="Y<txp:posted format="%Y" />" id="Y<txp:posted format="%Y" />"></a><div class="cattitle"><txp:posted format="%Y" /></div>
+
+<p class="back"><a href="<txp:site_url />archivo-mensual/#menutop">Volver arriba</a></p>
+
+</txp:if_different>
+
+<!-- show the month -->
+<txp:if_different>
+
+<div class="montharchivedate"><txp:posted format="%B" /></div>
+
+</txp:if_different>
+
+<!-- article title and link -->
+<span class="montharchivearticle"><txp:permlink><txp:title /></txp:permlink></span>
+<br />

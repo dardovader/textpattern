@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="<txp:css n="default"/>" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS 0.92" href="/?rss=1&#38;section=article" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/?atom=1&#38;section=article" />
+<title><txp:page_title /></title>
+
+</head>
+<body>
+
+<div id="accessibility">
+<a href="#content" title="Ir al contenido">Ir a contenido</a> 
+<a href="#sidebar-1" title="Ir a navegación">Ir a navegación</a> 
+<a href="#sidebar-2" title="Ir a la búsqueda">Ir a la búsqueda</a> 
+</div> <!-- close accessibility -->
+
+<div id="wrapper">
+
+<div id="masthead"><txp:output_form form="navigation" /></div>
+<div id="blogtitle">
+<txp:link_to_home><txp:site_name /></txp:link_to_home>
+</div>
+
+<div id="insideWrapper">
+
+<div id="contentwrapper">
+
+<div id="content" style="text-align:center;">
+
+<h2 style="text-align:center;"><txp:site_name/>: <txp:error_status /></h2>
+<p><txp:error_message /><br />
+Mi perro se ha comido esta página.</p>
+
+<p>Mejor vuelve a <txp:link_to_home><txp:site_name /></txp:link_to_home></p>
+
+</div> <!-- close content -->
+
+<!-- footer -->
+<txp:output_form form="footer" />
+
+</div> <!-- close contentwrapper -->
+
+</div> <!-- close insideWrapper -->
+
+</div> <!-- close wrapper -->
+
+</body>
+</html>
